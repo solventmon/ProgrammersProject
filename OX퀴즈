@@ -1,0 +1,57 @@
+class Solution {
+  public String[] solution(String[] quiz) {
+      String[] answer = new String[quiz.length];
+      
+      for(int i =0; i < quiz.length; i++)
+      {
+        int flag = 0;
+        int num1 = 0;
+        int num2 = 0;
+        int total =0;
+
+        quiz[i] = quiz[i].replace(" ", "");
+        String arr = quiz[i];
+
+        arr = arr.replace("--", "+"); //공백 지우기 -3 + 4 = 1
+        for(int j =0; j < arr.length(); j++)
+        {
+          if(arr.charAt(j) == '+') 
+          {
+            num1 = Integer.parseInt(arr.substring(0,j));
+            num2 = Integer.parseInt(arr.substring(j+1,arr.indexOf("=")));
+            total = num1 + num2;
+          }
+
+          else if(arr.charAt(j) == '-')
+          {
+            if(j == 0)
+            {
+              continue;
+            }
+            if(flag == 1) continue;
+            else{
+              num1 = Integer.parseInt(arr.substring(0,j));
+              num2 = Integer.parseInt(arr.substring(j+1,arr.indexOf("=")));
+              total = num1 - num2;
+              flag =1;
+            }
+          }
+          if(arr.charAt(j) == '=')
+          {
+            if(total == Integer.parseInt(arr.substring(j+1,arr.length())))
+            {
+              answer[i] ="O";
+              break;
+            }
+            else
+            {
+              answer[i] = "X";
+              break;
+            }
+          }
+        }
+      }
+
+      return answer;
+  }
+}
