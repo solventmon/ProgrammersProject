@@ -1,0 +1,27 @@
+import java.util.Arrays;
+import java.util.Collections;
+
+class Solution {
+  public String solution(String s) {
+      String answer = "";
+      String s1 = s;
+      for(int i =0; i<s.length(); i++)
+      {
+        String a = "";
+        for(int j=i+1; j < s.length(); j++)
+        {
+          if(s.charAt(i) == s.charAt(j))
+          {
+           a += s.charAt(i);
+           s1 = s1.replace(a, "");
+          }
+        }
+      }
+      char[] chars = s1.toCharArray();
+      Arrays.sort(chars);
+      answer = new String(chars);
+
+      
+      return answer;
+  }
+}
