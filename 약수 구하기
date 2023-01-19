@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+class Solution {
+  public ArrayList<Integer> solution(int n) {
+      ArrayList<Integer> list = new ArrayList<>();
+      double sqrt = Math.sqrt(n);
+
+      for(int i =1; i<= sqrt; i++)
+      {
+        if(n % i ==0)
+        {
+          if (Math.pow(i, 2) == n) {
+            list.add(i);
+      }  else {
+            list.add(i);
+            list.add(n / i);
+      }
+        }
+        
+      }
+      Collections.sort(list);
+
+      return list;
+  }
+}
