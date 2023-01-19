@@ -1,0 +1,22 @@
+class Solution {
+  public long solution(String numbers) {
+      long answer = 0;
+
+      String[] arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+      
+      numbers = numbers.replace(arr[0],"0");
+      numbers = numbers.replace(arr[1],"1");
+      numbers = numbers.replace(arr[2],"2");
+      numbers = numbers.replace(arr[3],"3");
+      numbers = numbers.replace(arr[4],"4");
+      numbers = numbers.replace(arr[5],"5");
+      numbers = numbers.replace(arr[6],"6");
+      numbers = numbers.replace(arr[7],"7");
+      numbers = numbers.replace(arr[8],"8");
+      numbers = numbers.replace(arr[9],"9");
+  
+      answer = Long.parseLong(numbers);
+
+      return answer;
+  }
+}
