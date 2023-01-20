@@ -1,0 +1,24 @@
+class Solution {
+  public String solution(String my_string) {
+      String answer = "";
+      char[] chars = my_string.toCharArray();
+
+      for(int i =0; i<chars.length; i++)
+      {
+        if(chars[i] > 96)
+         {
+           chars[i] = (char)(chars[i] -32); 
+         }
+         else if(chars[i]>64 && chars[i] <97)
+         {
+          chars[i] = (char)(chars[i] +32); 
+         }
+      }
+
+      answer = new String(chars);
+
+
+
+      return answer;
+  }
+}
