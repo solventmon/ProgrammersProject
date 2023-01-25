@@ -1,0 +1,21 @@
+class Solution {
+  public int solution(int i, int j, int k) {
+      int answer = 0;
+  
+      for(int w = i; w <= j; w++)
+      {
+        int v = w;
+        
+        while(v!=0)
+        {
+          if(v % 10 == k)
+          {
+          answer++;
+          }
+          v = v / 10;
+        }
+      }
+
+      return answer;
+  }
+}
