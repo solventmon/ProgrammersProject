@@ -1,0 +1,24 @@
+import java.util.Arrays;
+
+import javax.lang.model.util.ElementScanner14;
+
+class Solution {
+  public int solution(String before, String after) {
+
+
+      char[] chara = before.toCharArray();
+      char[] charb = after.toCharArray();
+
+      Arrays.sort(chara);
+      Arrays.sort(charb);
+
+      String str1 = new String(chara);
+      String str2 = new String(charb);
+
+      if(str1.equals(str2))
+      {
+        return 1;
+      }
+      else return 0;
+  }
+}
