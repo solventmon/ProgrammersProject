@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+class Solution {
+    public int solution(int n, int[] lost, int[] reserve) {
+        int answer = 0;
+
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+
+        Arrays.sort(lost);
+        Arrays.sort(reserve);
+
+
+        for(int i =0; i < lost.length; i++)
+        list1.add(lost[i]);
+
+        for(int i =0; i < reserve.length; i++)
+        list2.add(reserve[i]);
+        
+        for(int i =0; i < list2.size(); i++)
+        {
+          for(int j =0; j < list1.size(); j++)
+          {
+            if(list2.get(i) == list1.get(j))
+            {
+              list1.remove(j);
+              break;
+            }
+            else
+            {
+              if(list2.get(i) == list1.get(j)-1)
+              {
+                list1.remove(j);
+                break;
+              }
+              else if(list2.get(i)== list1.get(j)+1)
+              {
+                list1.remove(j);
+                break;
+              } 
+            }
+            
+          }
+        }
+        answer = n - list1.size();
+        
+
+        return answer;
+    }
+}
